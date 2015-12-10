@@ -1,20 +1,6 @@
 var exampleSocket = null;
 var state = "email";
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) {
-            cval = c.substring(name.length,c.length);
-            return cval;
-        }
-    }
-    return null;
-}
-
 function submitcontent() {
     if (exampleSocket == null) {
         exampleSocket = new WebSocket("ws://localhost:8888/signup");
@@ -22,7 +8,6 @@ function submitcontent() {
             var val = document.getElementById('content').value;
             var msg = {
                 type: 'email',
-                _xsrf: getCookie('_xsrf'),
                 email: val
             };
             exampleSocket.send(JSON.stringify(msg));
@@ -36,7 +21,6 @@ function submitcontent() {
             case "eotp":
             var msg = {
                 type: 'eotp',
-                _xsrf: getCookie('_xsrf'),
                 eotp: val
             };
             state = "ssms";
@@ -44,7 +28,6 @@ function submitcontent() {
             case "ssms":
             var msg = {
                 type: 'addr',
-                _xsrf: getCookie('_xsrf'),
                 addr: val
             };
             state = "done";

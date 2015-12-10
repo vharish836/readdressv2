@@ -1,0 +1,12 @@
+backports-abc==0.4
+greenlet==0.4.9
+motor==0.5
+oath==1.4.1
+pymaging==0.1
+pymaging-png==0.1
+pymongo==2.8
+qrcode==5.1
+redis==2.10.5
+six==1.10.0
+tornado==4.3
+wheel==0.24.0
