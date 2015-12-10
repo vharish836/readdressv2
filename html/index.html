@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <article class="w3-container"></div>
+        <p class="w3-jumbo w3-hide-small">Readdress</p>
+        <p class="w3-xlarge w3-hide-medium w3-hide-large">Readdress</p>
+        <p class="w3-justify">
+        Signup and manage your Email, Phone Number &amp; Address with ease.
+        Use &lt;phonenumber&gt;@readdress.io as your email id in other sites for login / alias email id.
+        In sites that support seamless collection, just entering either phone number or email is enough to provide all
+        needed contact information.
+        </p>
+        <button class="w3-btn w3-indigo w3-card-4" onclick="document.getElementById('signup').style.display='block'">Signup</button>
+    </article>
+
+    <div id="signup" class="w3-modal">
+        <div class="w3-modal-content">
+            <header class="w3-container w3-indigo">
+                <div id="modalhead">
+                    <h5>Provide Email</h5>
+                </div>
+            </header>
+            <div class="w3-container" id="innermodal">
+                <div class="w3-input-group">
+                    <input id="content" class="w3-input" type="email" name="email" required>
+                    <label class="w3-label w3-validate">Email</label>
+                </div>
+                <button onclick="submitcontent()" class="w3-btn w3-indigo w3-card-4">Submit</button>
+            </div>
+        </div>
+    </div>
+{% end %}

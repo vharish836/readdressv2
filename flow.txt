@@ -1,0 +1,6 @@
+websocket flow
+at each step client sends data from particular element to server, server does some work on the data and sends back html content to be put for next step
+step 1 - get email, server sends confirmation email, next step will require otp received in email to be entered
+step 2 - get otp, server verifies otp, next step will require sending sms with particular code
+step 3 - client polls server for update every two seconds, next step would be to get address
+step 4 - get address, server saves address, end of flow
